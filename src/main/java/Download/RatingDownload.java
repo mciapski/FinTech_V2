@@ -11,12 +11,15 @@ import java.io.*;
 public class RatingDownload {
   public static void main(String[] args) throws IOException {
 
+
     OperationsImpl operation = new OperationsImpl();
-
-    operation.openConnection(operation.getTicker());
-    operation.testReading();
-
-
+    operation.showTheMostPopular();
+    operation.openConnection(operation.getTicker(), operation.getDateRange());
+//    //operation.testReading();
+    operation.readValuesFromFile();
+    operation.showValues(operation.listOfCompanyValues);
+    PriceChartWithoutVolume companyChart = new PriceChartWithoutVolume("Company chart", " ",operation.listOfCompanyValues);
+    companyChart.showChart(companyChart);
 
 //    /**
 //     ------------------------ CONNECTION BLOCK----------------------------------
@@ -69,8 +72,8 @@ public class RatingDownload {
 //      /**
 //       ------------------------ READ BLOCK----------------------------------
 //       */
-    }
   }
+}
 
 
 
