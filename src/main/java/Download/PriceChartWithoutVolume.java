@@ -80,6 +80,7 @@ public class PriceChartWithoutVolume extends JFrame {
    * @return the dataset.
    * @param list
    */
+
   private XYDataset createDataset(List<Company> list) {
     TimeSeries s1 = new TimeSeries("Company: " + "chartData.tickerName");
     for (int i = 1; i < list.size(); i++) {
